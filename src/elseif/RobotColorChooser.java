@@ -37,11 +37,15 @@ public class RobotColorChooser {
 			}else if (UserColor.equalsIgnoreCase("magenta")){
 				robot.setPenColor(Color.magenta);
 			}else if (UserColor.equalsIgnoreCase("blue")){
-				JOptionPane.showMessageDialog(null, "[Color Not Found. Default Color: Black] ");
+				robot.setPenColor(Color.blue);
+			}else if (UserColor.equalsIgnoreCase("random")){
 				robot.setRandomPenColor();
+			}else {
+				JOptionPane.showMessageDialog(null, "[Color Not Found. Default Color: Black] ");
+				robot.setRandomPenColor();				
 			}
 	        //6. If the user doesn’t enter anything, choose a random color
-			int RandomSides = r.nextInt(7)+2;
+			int RandomSides = r.nextInt(10)+2;
 			int DegreesToTurn = 360/RandomSides;
 	        //7. Put a loop around your code so that you keep asking the user for more colors & drawing them
 			for (int w=1;w<=RandomSides;w++) {
