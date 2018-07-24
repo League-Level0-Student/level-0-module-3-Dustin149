@@ -73,6 +73,7 @@ public class FizzBuzz {
 				boolean ComputerCorrect = (CheckIfCorrect(Number,ComputerAnswer));
 				
 				if (ComputerCorrect == false) {
+					JOptionPane.showMessageDialog(null, "Dang it, I lost!");
 					GameEnded = true;
 					Won = true;
 				}
@@ -104,11 +105,18 @@ public class FizzBuzz {
 			DivisibleBy5 = true;
 		}		
 		
-		if (DivisibleBy3 == true) if (DivisibleBy5 == true) {
-			return "FizzBuzz";
-		} else if (DivisibleBy3 == true) {
+		System.out.println(DivisibleBy3);
+		System.out.println(DivisibleBy5);
+		
+		if (DivisibleBy3 == true) {
+			if (DivisibleBy5 == true) {
+				return "FizzBuzz";
+			}
 			return "Fizz";
 		} else if (DivisibleBy5 == true) {
+			if (DivisibleBy3 == true) {
+				return "FizzBuzz";
+			}			
 			return "Buzz";
 		}
 		
